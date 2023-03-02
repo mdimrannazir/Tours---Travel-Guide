@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Slider Starts */
+.c-item {
+    height: 480px;
+  }
+  
+  .c-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+/* Slider Ends */
+
+.iconCard{
+    margin-bottom: 10px !important;
+}
+
+/* Signup Page Starts*/
+
+#signUpPage {
+    /* background-image: url(images/background.png);
+    height: 140vh;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.noAccount {
+    float: right;
+}
+
+.noAccount a {
+    color: #96DCE0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.noAccount a:hover {
+    color: #00476F;
+    text-decoration: underline;
+}
+
+/* Signup Page Ends*/
+
+/* Login Page Starts */
+#loginPage {
+    background-image: url(images/background.png);
+    height: 100vh;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.avatar {
+    width: 40%;
+}
+
+.loginContainer {
+    width: 30%;
+    border: 2px solid #eee;
+    padding: 20px;
+    margin: auto;
+    background-color: white;
+
+}
+
+input[type=text],
+[type=email],
+input[type=password],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.btnLogin {
+    background-color: #212529;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    border: 1px solid #212529;
+}
+
+
+.buttonlinks {
+    background-color: #58969a;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonlinks a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.btnLogin:hover {
+    background-color: #00476F;
+    color: white;
+    transition-delay: 0.1s;
+}
+/* Login Page Ends */
