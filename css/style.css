@@ -114,3 +114,33 @@ select {
     transition-delay: 0.1s;
 }
 /* Login Page Ends */
+
+/* Place Details Page - Hero Image Starts */
+.image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70vh;
+    margin-top: 10px;
+}
+
+.left-img {
+    flex: 2;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.right-imgs {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+}
+
+.right-imgs img {
+    margin-bottom: 10px;
+    height: 49%;
+    width: 100%;
+}
+
+/* Place Details Page - Hero Image Ends */
