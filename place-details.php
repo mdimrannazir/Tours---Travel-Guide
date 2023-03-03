@@ -36,7 +36,7 @@
     </div>
     <!-- Place Details Starts -->
         <div class="container">
-            <h2 class="">Place Name</h2>
+            <h2 class="display-6 fw-bold">Place Name</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, autem excepturi! Voluptatem id impedit quod similique aliquam, officiis qui corrupti optio ab voluptas cupiditate ipsam labore. In explicabo asperiores alias.</p>
         </div>
     <!-- Place Details Starts -->
@@ -47,7 +47,7 @@
     <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="text-dark">
-                        <h3>Stay</h3>
+                        <h3 class="fw-bold">Stay</h3>
                         <p>List of places you can choose to stay in.</p>
                     </div>
             </div>
@@ -94,7 +94,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="text-dark">
-                        <h3>Activities</h3>
+                        <h3 class="fw-bold">Activities</h3>
                         <p>Things you can do in this location.</p>
                     </div>
             </div>
@@ -140,7 +140,7 @@
 <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="text-dark">
-                        <h3>Foods</h3>
+                        <h3  class="fw-bold">Foods</h3>
                         <p>Delicious foods you must try on this place.</p>
                     </div>
             </div>

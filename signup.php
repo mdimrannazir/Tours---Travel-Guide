@@ -1,3 +1,26 @@
+<?php
+    $showAlert = false;
+    if($_SERVER["REQUEST_METHOD"] == "POST"){   
+        include 'db/_dbConnect.php';
+        $fullname = $_POST["fullname"];
+        $uid = $_POST["uid"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $cpassword = $_POST["cpassword"];
+        $exists = false;
+        if(($password == $cpassword) && $exists == false){
+            $sql = "INSERT INTO `user` (`fullname`, `uid`, `email`, `password`, `date`) VALUES ('$fullname', '$uid', '$email', '$password', current_timestamp());";
+            $result = mysqli_query($connect, $sql);
+
+
+            if($result){
+                $showAlert = true;
+            }
+        }
+    }
+    
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,6 +41,14 @@
 </head>
 
 <body>
+    <?php
+    if($showAlert){
+        echo '
+        <div class="alert alert-success" role="alert">
+            This is a success alert—check it out!
+        </div>';
+    }
+    ?>
     <!-- Navigation starts here -->
     <?php
         require 'php/nav.php';
@@ -37,13 +68,15 @@
 
 
                 
-                <input type="text" placeholder="Enter Full Name" required name="fullName">
+                <input type="text" placeholder="Enter Full Name" required name="fullname">
                 <br>
                 
-                <input type="text" placeholder="Enter Email Address" required name="uid">
+                <input type="text" placeholder="Enter User ID" required name="uid">
+
+                <input type="text" placeholder="Enter Email Address" required name="email">
                 
-                <input type="password" placeholder="Enter Password" required name="upass">
-                <input type="password" placeholder="Re-enter Password" required name="cpass">
+                <input type="password" placeholder="Enter Password" required name="password">
+                <input type="password" placeholder="Re-enter Password" required name="cpassword">
                 <br>
                 <label>
                     <input type="checkbox" checked="checked"> I accept the terms & conditions
