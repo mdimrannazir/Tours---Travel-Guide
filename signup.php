@@ -1,25 +1,35 @@
 <?php
-    $showAlert = false;
-    if($_SERVER["REQUEST_METHOD"] == "POST"){   
+$showAlert = false;
+$showError = "";
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
         include 'db/_dbConnect.php';
         $fullname = $_POST["fullname"];
         $uid = $_POST["uid"];
         $email = $_POST["email"];
         $password = $_POST["password"];
         $cpassword = $_POST["cpassword"];
-        $exists = false;
-        if(($password == $cpassword) && $exists == false){
+        
+        //check whether the user id exist or not?
+        $existSql = "SELECT * FROM user where uid = '$uid'";
+        $fireq = mysqli_query($connect, $existSql);
+
+        $numExistRows = mysqli_num_rows($fireq);
+        if ($numExistRows > 0) {
+            $showError = "User ID already exists, try loggin in!";
+            // header("location:login.php");
+        } else if ($password == $cpassword) {
+
             $sql = "INSERT INTO `user` (`fullname`, `uid`, `email`, `password`, `date`) VALUES ('$fullname', '$uid', '$email', '$password', current_timestamp());";
-            $result = mysqli_query($connect, $sql);
-
-
-            if($result){
-                $showAlert = true;
-            }
-        }
-    }
     
-?>
+            $fireq = mysqli_query($connect, $sql);
+            if ($fireq) {
+                $showAlert = true;
+                header("location:login.php");
+            }
+        } else $showError = "Password doesn't match, try again carefully!";
+    }
+    ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -45,7 +55,15 @@
     if($showAlert){
         echo '
         <div class="alert alert-success" role="alert">
-            This is a success alert—check it out!
+            Great! Your account is created. Headover to the login page to login.
+        </div>';
+    }
+    ?>
+        <?php
+    if($showError){
+        echo '
+        <div class="alert alert-danger" role="alert">
+            Error! '. $showError.'
         </div>';
     }
     ?>
@@ -85,5 +103,11 @@
             </form>
         </div>
     </section>
+    <br><br>
+    <!-- Footer starts here -->
+    <?php
+    require 'php/footer.php'
+    ?>
+    <!-- Footer Ends here -->
 </body>
 </html>

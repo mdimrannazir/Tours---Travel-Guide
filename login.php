@@ -1,3 +1,33 @@
+<?php
+    $login = false;
+    $showError = "";
+    if($_SERVER["REQUEST_METHOD"] == "POST"){   
+        include 'db/_dbConnect.php';
+        $uid = $_POST["uid"];
+        $password = $_POST["password"];
+        
+        $sql = "SELECT * FROM `user` where uid='$uid'";
+            $result = mysqli_query($connect, $sql);
+            $num = mysqli_num_rows($result);
+
+
+            if($num==1){
+                while ($row = mysqli_fetch_assoc($result)) {
+                    if ($num == 1) {
+                        $login = true;
+                        session_start();
+                        $_SESSION['loggedin'] = true;  
+                        $_SESSION['uid'] = $uid;
+                        header("location: dashboard.php");
+                    }
+                }
+            }
+            else{
+                $showError = "Invalid Credentials";
+            }
+        } 
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,6 +48,22 @@
 </head>
 
 <body>
+<?php
+    if($login){
+        echo '
+        <div class="alert alert-success" role="alert">
+            Great! You are logged in.
+        </div>';
+    }
+    ?>
+        <?php
+    if($showError){
+        echo '
+        <div class="alert alert-danger" role="alert">
+            Error! '. $showError.'
+        </div>';
+    }
+    ?>
     <!-- Navigation starts here -->
     <?php
         require 'php/nav.php';
@@ -28,7 +74,6 @@
 
 
 <section id="loginPage">
-        <!-- <h2 class="top">Login Form</h2> -->
         <br>
         <form action="login.php" method="POST">
             <div class="loginContainer">
@@ -38,10 +83,10 @@
                 <div class="imgcontainer">
                     <img src="images/avatar.webp" alt="Avatar" class="avatar">
                 </div>
-                <label for="uname"><b>University ID</b></label>
-                <input type="text" placeholder="Enter University ID" name="uid" required>
+                <label for="uname"><b>User ID</b></label>
+                <input type="text" placeholder="ID here..." name="uid" required>
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="upass" required>
+                <input type="password" placeholder="Enter Password" name="password" required>
                 <a href="dashboard.php?uid='<?php $uid ?>'"><button type=" submit" class="btnLogin">Login</button></a>
                 <br>
                 <label>
@@ -50,6 +95,11 @@
             </div>
         </form>
     </section>
-
+    <br><br>
+    <!-- Footer starts here -->
+    <?php
+    require 'php/footer.php'
+    ?>
+    <!-- Footer Ends here -->
 </body>
 </html>

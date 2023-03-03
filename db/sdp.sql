@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2023 at 04:03 PM
+-- Generation Time: Mar 03, 2023 at 08:59 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -41,8 +41,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`sno`, `fullname`, `uid`, `email`, `password`, `date`) VALUES
-(0, 'Afsana Akter', 295, 'afsanaakter@gmail.com', '1234', '2023-03-02 21:00:07'),
-(1, 'Md. Imran Nazir', 248, 'imrannazir1.in@gmail.com', '1234', '2023-03-02 20:34:35');
+(1, 'Md. Imran Nazir', 248, 'imrannazir1.in@gmail.com', '1234', '2023-03-02 20:34:35'),
+(2, 'Afsana Akter', 295, 'afsanaakter@gmail.com', '1234', '2023-03-04 00:04:26');
 
 --
 -- Indexes for dumped tables
@@ -53,6 +53,16 @@ INSERT INTO `user` (`sno`, `fullname`, `uid`, `email`, `password`, `date`) VALUE
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`sno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `sno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
