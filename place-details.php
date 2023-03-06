@@ -1,3 +1,20 @@
+<?php
+include 'db/_dbConnect.php';
+
+$placeID = (int) $_GET['id'];
+
+// Place Information
+$sql = "SELECT * FROM `place` WHERE `placeid` = '{$placeID}'";
+$result = mysqli_query($connect, $sql);
+$place = mysqli_fetch_assoc($result);
+
+// Place Stay Data
+$sql = "SELECT * FROM `stay` WHERE `placeid` = '{$placeID}'";
+$result = mysqli_query($connect, $sql);
+$stays = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -36,8 +53,8 @@
     </div>
     <!-- Place Details Starts -->
         <div class="container">
-            <h2 class="display-6 fw-bold">Place Name</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, autem excepturi! Voluptatem id impedit quod similique aliquam, officiis qui corrupti optio ab voluptas cupiditate ipsam labore. In explicabo asperiores alias.</p>
+            <h2 class="display-6 fw-bold"><?php echo $place['placetitle'] ?></h2>
+            <div><?php echo $place['placedesc'] ?></div>
         </div>
     <!-- Place Details Starts -->
  
@@ -51,42 +68,28 @@
                         <p>List of places you can choose to stay in.</p>
                     </div>
             </div>
+
+            <?php
+            
+            foreach($stays as $stay){
+            
+            ?>
+
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
+                <a href="stay-details.php?id=<?php echo $stay['stayid'] ?>" class="text-white">
                     <div class="card bg-dark">
                         <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
                         <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
+                            <h2 class="card-title text-white"><?php echo $stay['staytitle'] ?></h2>
                             <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
                             </h4>
                         </div>
                     </div>
                 </a>  
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>  
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>  
-            </div>            
+
+            <?php } ?>
+
         </div>
 <!-- Stay Ends -->
 <br><br>

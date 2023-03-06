@@ -1,5 +1,10 @@
 <?php
-    include 'db/_dbConnect.php';
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    header("location: login.php");
+    exit;
+}
+include 'db/_dbConnect.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -75,7 +80,7 @@
                                 <a href="update.php" class="text-light text-decoration-none">Update</a>
                             </button>
                             <button class="btn btn-danger">
-                                <a href="delete.php?deleteid='.$id.'" class="text-light text-decoration-none">Delete</a>
+                                <a href="delete.php?type=user&id='.$id.'" class="text-light text-decoration-none">Delete</a>
                             </button>
                         </td>
 

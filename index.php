@@ -1,3 +1,11 @@
+<?php
+include 'db/_dbConnect.php';
+
+$sql = "SELECT `placeid`, `placetitle` FROM `place`";
+$result = mysqli_query($connect, $sql);
+$places = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -37,82 +45,28 @@
     <h2 class="text-center fw-bolder display-4" id="travels"><span class="" style="color:#ff5d5d">Explore</span> Places</h2>
     <div class="container">
         <div class="row">
+
+        <?php
+        foreach($places as $place){
+
+        ?>
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="place-details.php" class="text-white">
+                <a href="place-details.php?id=<?php echo $place['placeid'] ?>" class="text-white">
                     <div class="card bg-dark">
                         <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
                         <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
+                            <h2 class="card-title text-white"><?php echo $place['placetitle']; ?></h2>
                             <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
                             </h4>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="place-details.php" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="place-details.php" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
+        <?php } ?>
+    
         </div>
-        <br><br>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="place-details.php" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="place-details.php" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="place-details.php" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+        
     </div>
     <br><br>
     <!-- Footer starts here -->

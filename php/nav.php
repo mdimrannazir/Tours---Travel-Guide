@@ -48,10 +48,22 @@ if($loggedin) echo'
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="dashboard.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.php">Contact</a>
+          <a class="nav-link" href="user-display.php">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add-place.php">Place</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add-stay.php">Stay</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add-activity.php">Activity</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add-food.php">Food</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./logout.php">Logout</a>

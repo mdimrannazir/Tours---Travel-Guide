@@ -1,9 +1,26 @@
 <?php
-   include 'db/_dbConnect.php'; 
-   if(isset($_GET['deleteid'])){
-        $id = $_GET['deleteid'];
+   include 'db/_dbConnect.php';
+   
+   if( !isset($_GET['id']) && !isset($_GET['type'])){
+    return "Invalid Request";
+   }
 
-        $sql = "Delete from `user` where uid = $id";
+   $type = $_GET['type'];
+   $id = $_GET['id'];
+
+   if( $type === 'place'){
+        $sql = "DELETE FROM `place` WHERE placeid = $id";
+        $result = mysqli_query($connect, $sql);
+        if ($result) {
+            // echo 'Deleted successfully';
+            header('location: add-place.php');
+        }
+        else{
+            die(mysqli_error($connect));
+        }
+   }
+   else if ($action === 'user'){
+        $sql = "DELETE FROM `user` WHERE uid = $id";
         $result = mysqli_query($connect, $sql);
         if ($result) {
             // echo 'Deleted successfully';
