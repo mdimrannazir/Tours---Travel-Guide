@@ -19,6 +19,28 @@
             die(mysqli_error($connect));
         }
    }
+
+
+
+
+
+   else if( $type === 'activity'){
+    $sql = "DELETE FROM `activity` WHERE activityid = $id";
+    $result = mysqli_query($connect, $sql);
+    if ($result) {
+        // echo 'Deleted successfully';
+        header('location: add-activity.php');
+    }
+    else{
+        die(mysqli_error($connect));
+    }
+}
+
+
+
+
+
+
    else if ($action === 'user'){
         $sql = "DELETE FROM `user` WHERE uid = $id";
         $result = mysqli_query($connect, $sql);

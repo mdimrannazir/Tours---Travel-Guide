@@ -13,6 +13,16 @@ $sql = "SELECT * FROM `stay` WHERE `placeid` = '{$placeID}'";
 $result = mysqli_query($connect, $sql);
 $stays = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+//Place Food Data
+$sql = "SELECT * FROM `food` WHERE `placeid` = '{$placeID}'";
+$result = mysqli_query($connect, $sql);
+$foods = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+//Place Activity Data
+$sql = "SELECT * FROM `activity` WHERE `placeid` = '{$placeID}'";
+$result = mysqli_query($connect, $sql);
+$activitys = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 ?>
 
 <!doctype html>
@@ -101,41 +111,26 @@ $stays = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <p>Things you can do in this location.</p>
                     </div>
             </div>
+            <?php
+            
+            foreach($activitys as $activity){
+            
+            ?>
+
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
+                <a href="activity-details.php?id=<?php echo $activity['activityid'] ?>" class="text-white">
                     <div class="card bg-dark">
                         <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
                         <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
+                            <h2 class="card-title text-white"><?php echo $activity['activitytitle'] ?></h2>
                             <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
                             </h4>
                         </div>
                     </div>
                 </a>  
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>  
-            </div><div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>  
-            </div>
+
+            <?php } ?>   
         </div>
 <!-- Activities Ends -->
 <br><br>
@@ -147,41 +142,27 @@ $stays = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <p>Delicious foods you must try on this place.</p>
                     </div>
             </div>
+            <?php
+            
+            foreach($foods as $food){
+            
+            ?>
+
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
+                <a href="food-details.php?id=<?php echo $food['foodid'] ?>" class="text-white">
                     <div class="card bg-dark">
                         <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
                         <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
+                            <h2 class="card-title text-white"><?php echo $food['foodtitle'] ?></h2>
                             <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
                             </h4>
                         </div>
                     </div>
                 </a>  
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>  
-            </div><div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white">Card title</h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>  
-            </div>
+
+            <?php } ?>           
+            
         </div>
 <!-- Foods Ends -->
 </div>

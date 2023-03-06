@@ -52,7 +52,54 @@ include 'db/_dbConnect.php';
             }
             ?>
     <!-- Admin general message ends here -->
+    
+    <!-- Dashboard Contents Starts Here -->
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Edit Places</h5>
+            <p class="card-text">Add places from this section, edit & delete them as well.</p>
+            <a href="add-place.php" class="btn btn-primary">Edit</a>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Edit Stays</h5>
+            <p class="card-text">Add stays from this section, edit & delete them as well.</p>
+            <a href="add-stay.php" class="btn btn-primary">Edit</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <br> <br>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Edit Activitis</h5>
+            <p class="card-text">Add Activitis from this section, edit & delete them as well.</p>
+            <a href="add-activity.php" class="btn btn-primary">Edit</a>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Edit Foods</h5>
+            <p class="card-text">Add Foods from this section, edit & delete them as well.</p>
+            <a href="add-food.php" class="btn btn-primary">Edit</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
 
+
+    <!-- Dashboard Contents Ends Here -->
 
 
     <br><br>
