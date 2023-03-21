@@ -53,14 +53,15 @@ $activitys = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     <!-- Hero Gallery Starts -->
     <div class="container">
-        <div class="image-container">
-            <img src="images/img-2.jpg" alt="Left Image" class="left-img">
-            <div class="right-imgs">
-                <img src="images/img-1.jpg" alt="Right Image 1">
-                <img src="images/img-1.jpg" alt="Right Image 2">
-            </div>
+    <div class="image-container">
+        <img src="https://source.unsplash.com/random/?travel-destination&1" alt="Left Image" class="left-img">
+        <div class="right-imgs">
+            <img src="https://source.unsplash.com/random/?travel-destination&2" alt="Right Image 1">
+            <img src="https://source.unsplash.com/random/?travel-destination&3" alt="Right Image 2">
         </div>
     </div>
+    </div>
+
     <!-- Place Details Starts -->
         <div class="container">
             <h2 class="display-6 fw-bold"><?php echo $place['placetitle'] ?></h2>
@@ -82,13 +83,13 @@ $activitys = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <?php
             
             foreach($stays as $stay){
-            
+                $url = "https://source.unsplash.com/random/?hotel-room&" . rand(); // Unique URL with the "tour" keyword and a random number
             ?>
 
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <a href="stay-details.php?id=<?php echo $stay['stayid'] ?>" class="text-white">
                     <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
+                        <img src="<?php echo $url; ?>" class="card-img pe-auto" alt="..." style="height: 300px;">
                         <div class="card-img-overlay d-flex justify-content-around align-items-end">
                             <h2 class="card-title text-white"><?php echo $stay['staytitle'] ?></h2>
                             <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
@@ -114,13 +115,13 @@ $activitys = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <?php
             
             foreach($activitys as $activity){
-            
+                $url = "https://source.unsplash.com/random/?activities&" . rand(); // Unique URL with the "tour" keyword and a random number
             ?>
 
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <a href="activity-details.php?id=<?php echo $activity['activityid'] ?>" class="text-white">
                     <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
+                        <img src="<?php echo $url; ?>" class="card-img pe-auto" alt="..." style="height: 300px;">
                         <div class="card-img-overlay d-flex justify-content-around align-items-end">
                             <h2 class="card-title text-white"><?php echo $activity['activitytitle'] ?></h2>
                             <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
@@ -145,13 +146,13 @@ $activitys = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <?php
             
             foreach($foods as $food){
-            
+                $url = "https://source.unsplash.com/random/?food&" . rand(); // Unique URL with the "tour" keyword and a random number
             ?>
 
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <a href="food-details.php?id=<?php echo $food['foodid'] ?>" class="text-white">
                     <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
+                        <img src="<?php echo $url; ?>" class="card-img pe-auto" alt="..." style="height: 300px;">
                         <div class="card-img-overlay d-flex justify-content-around align-items-end">
                             <h2 class="card-title text-white"><?php echo $food['foodtitle'] ?></h2>
                             <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>

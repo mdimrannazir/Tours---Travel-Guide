@@ -18,8 +18,8 @@ $showError = "";
             $showError = "User ID already exists, try loggin in!";
             // header("location:login.php");
         } else if ($password == $cpassword) {
-
-            $sql = "INSERT INTO `user` (`fullname`, `uid`, `email`, `password`, `date`) VALUES ('$fullname', '$uid', '$email', '$password', current_timestamp());";
+            $hash = md5($password);
+            $sql = "INSERT INTO `user` (`fullname`, `uid`, `email`, `password`, `date`) VALUES ('$fullname', '$uid', '$email', '$hash', current_timestamp());";
     
             $fireq = mysqli_query($connect, $sql);
             if ($fireq) {

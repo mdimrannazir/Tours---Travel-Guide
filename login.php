@@ -13,7 +13,7 @@
 
             if($num==1){
                 while ($row = mysqli_fetch_assoc($result)) {
-                    if ($num == 1) {
+                    if (md5($password) === $row['password']) {
                         $login = true;
                         session_start();
                         $_SESSION['loggedin'] = true;  

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2023 at 08:51 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Mar 21, 2023 at 07:44 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `activity` (
   `placeid` int(50) NOT NULL,
   `activitytitle` varchar(100) NOT NULL,
   `activitydesc` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `activity`
@@ -42,7 +42,8 @@ INSERT INTO `activity` (`activityid`, `placeid`, `activitytitle`, `activitydesc`
 (10, 8, 'Inani Beach', 'nani beach is a well-known place in Cox’s Bazar. The Inani beach is a coral beach with sharp stones.\r\n\r\nPathorkhani is located in Inani Beach, a famous attraction where tourists gather around it and take snapshots by sitting on it.\r\n\r\nAlso the sea view youll get in the Inani is unlike any other spot in Coxs bazar. For a perfect beach view stay at Inani you can choose Dera Resort & Spa Coxs Bazars five star facility.'),
 (11, 8, 'Marine Drive', 'The longest marine drive in the world is Coxs Bazar–Teknaf marine drive which is about 80 kilometers long. You can ride the Chander Gari from Coxs Bazar to Teknaf. You can also go to Saint Martin Island from there.'),
 (13, 9, 'Tiger Point Sundarban', ' Kachikhali is more often called as tiger point. This place is best for wild tracking.'),
-(14, 9, 'Jamtola Beach', 'Jamtola Sea beach sundarban is another magnificent tourist spot where tourist will enjoy the sunset and sur rise.');
+(14, 9, 'Jamtola Beach', 'Jamtola Sea beach sundarban is another magnificent tourist spot where tourist will enjoy the sunset and sur rise.'),
+(15, 10, 'dfg', 'sdfghjk');
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,7 @@ CREATE TABLE `food` (
   `placeid` int(50) NOT NULL,
   `foodtitle` varchar(50) NOT NULL,
   `fooddesc` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `food`
@@ -77,7 +78,7 @@ CREATE TABLE `place` (
   `placeid` int(50) NOT NULL,
   `placetitle` varchar(100) NOT NULL,
   `placedesc` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `place`
@@ -98,7 +99,7 @@ CREATE TABLE `stay` (
   `placeid` int(50) NOT NULL,
   `staytitle` varchar(100) NOT NULL,
   `staydesc` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `stay`
@@ -108,7 +109,9 @@ INSERT INTO `stay` (`stayid`, `placeid`, `staytitle`, `staydesc`) VALUES
 (11, 8, 'Hotel Sea Shine', 'Situated in Coxs Bazar, 400 metres from Coxs Bazar Sea Beach, Hotel Sea Shine features accommodation with free WiFi and free private parking. At the hotel, rooms have a balcony with a city view. '),
 (12, 8, 'Long Beach Hotel ', 'Offering an indoor pool, a fitness centre and a spa and wellness centre, Long Beach Hotel is located 3.3 km from the Coxs Bazar Airport and Local Bus Station. good hotel to stay . nice atmosphere . well behaved staff. food should be more tasty. nice bed.'),
 (13, 9, 'ROYAL SUNDARBAN', 'Location of the Hotel is Satjelia View On Map (Jharkhali coastal, 2nd scheme, PS BasantiSouth 24 Parganas Pin - 743312 ). Top Facilities of this Hotel are Air Conditioning & Room Service & Power Backup.'),
-(14, 9, 'Sundarban Gateway Resort', 'Full Address of property is Vill : Dulki, Pakhiralaya, PS: Gosaba, South 24 Parganas View On Map This Hotel have 2.6 Out of 5 Rating where 3.7/5 for Location & 3.4/5 for Hospitality & 3.3/5 for Room . Key amenities of this property are Lounge & Outdoor Sports & Boat Ride.');
+(14, 9, 'Sundarban Gateway Resort', 'Full Address of property is Vill : Dulki, Pakhiralaya, PS: Gosaba, South 24 Parganas View On Map This Hotel have 2.6 Out of 5 Rating where 3.7/5 for Location & 3.4/5 for Hospitality & 3.3/5 for Room . Key amenities of this property are Lounge & Outdoor Sports & Boat Ride.'),
+(15, 10, 'as', 'gyukn'),
+(16, 12, 'redbith', 'dfghh');
 
 -- --------------------------------------------------------
 
@@ -123,16 +126,18 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`sno`, `fullname`, `uid`, `email`, `password`, `date`) VALUES
-(1, 'MD. Imran Nazir', 248, 'imrannazir1.in@gmail.com', '1234', '2023-03-04 03:56:43'),
-(2, 'Afsana Akter', 295, 'afsanaakter@gmail.com', '1234', '2023-03-04 00:04:26'),
-(6, 'Ibrahim Khalil', 250, 'ibrahim@gmail.com', '1234', '2023-03-06 22:04:07');
+(8, 'Afsana Hash Password', 111, 'afs@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-03-21 17:33:30'),
+(9, 'MD. Imran Nazir', 248, 'imrannazir1.in@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-03-21 17:59:40'),
+(10, 'Afsana Akter', 295, 'afsanaakter@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-03-21 18:00:15'),
+(11, 'Ibrahim Kholil', 222, 'ibrahim@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-03-21 22:52:34'),
+(12, 'Mohammad Hasibul Islam', 333, 'hasib@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-03-21 22:53:06');
 
 --
 -- Indexes for dumped tables
@@ -176,7 +181,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `activityid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `activityid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `food`
@@ -188,19 +193,19 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `place`
 --
 ALTER TABLE `place`
-  MODIFY `placeid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `placeid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `stay`
 --
 ALTER TABLE `stay`
-  MODIFY `stayid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `stayid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `sno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `sno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

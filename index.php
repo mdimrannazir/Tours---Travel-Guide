@@ -48,22 +48,25 @@ $places = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         <?php
         foreach($places as $place){
-
+            $url = "https://source.unsplash.com/random/?travel-destination" . rand(); // Unique URL with the "tour" keyword and a random number
         ?>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="place-details.php?id=<?php echo $place['placeid'] ?>" class="text-white">
-                    <div class="card bg-dark">
-                        <img src="images/img-1.jpg" class="card-img pe-auto" alt="...">
-                        <div class="card-img-overlay d-flex justify-content-around align-items-end">
-                            <h2 class="card-title text-white"><?php echo $place['placetitle']; ?></h2>
-                            <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i>
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
-        <?php } ?>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="place-details.php?id=<?php echo $place['placeid'] ?>" class="text-white">
+                <div class="card bg-dark">
+                    <img src="<?php echo $url; ?>" class="card-img pe-auto" alt="..." style="height: 300px;">
+                    <div class="card-img-overlay d-flex justify-content-around align-items-end">
+                        <h2 class="card-title text-white"><?php echo $place['placetitle']; ?></h2>
+                        <h4 class="card-text iconCard"><i class="bi bi-arrow-right-circle"></i></h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+<?php } ?>
+
+
+
     
         </div>
         

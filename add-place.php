@@ -105,7 +105,9 @@ if(isset($_POST['submit'])){
 
         <?php } ?>
 
+
     </div>
+    <br>
     <!-- Add Place Form Ends Here -->
 
     <div class="container">

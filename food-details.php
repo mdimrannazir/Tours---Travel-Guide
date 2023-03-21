@@ -39,10 +39,10 @@ $food = mysqli_fetch_assoc($result);
     <!-- Hero Gallery Starts -->
     <div class="container">
         <div class="image-container">
-            <img src="https://picsum.photos/seed/picsum/200/300" alt="Left Image" class="left-img">
+            <img src="https://source.unsplash.com/random/?food&1" alt="Left Image" class="left-img">
             <div class="right-imgs">
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Right Image 1">
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Right Image 2">
+                <img src="https://source.unsplash.com/random/?food&2" alt="Right Image 1">
+                <img src="https://source.unsplash.com/random/?food&3" alt="Right Image 2">
             </div>
         </div>
     </div>

@@ -41,7 +41,7 @@
 
 
 
-   else if ($action === 'user'){
+   else if ( $type === 'user' ){
         $sql = "DELETE FROM `user` WHERE uid = $id";
         $result = mysqli_query($connect, $sql);
         if ($result) {
