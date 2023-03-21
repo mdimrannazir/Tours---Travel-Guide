@@ -83,7 +83,7 @@ if(isset($_POST['submit'])){
                 <textarea class="form-control" rows="5" name="desc"><?php echo $place['placedesc'] ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary" name="update">Update</button>
-            <button type="button" class="btn btn-dark">Back to Dashboard</button>
+            <button onclick="window.location.href = 'dashboard.php';" type="button" class="btn btn-dark">Back to Dashboard</button>
         </form>
 
         <?php
@@ -100,7 +100,7 @@ if(isset($_POST['submit'])){
                 <textarea class="form-control" rows="5" name="desc"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            <button type="button" class="btn btn-dark">Back to Dashboard</button>
+            <button onclick="window.location.href = 'dashboard.php';" type="button" class="btn btn-dark">Back to Dashboard</button>
         </form>
 
         <?php } ?>

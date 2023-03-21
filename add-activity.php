@@ -93,7 +93,7 @@ $places = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <textarea class="form-control" rows="5" name="activitydesc"><?php echo $activity['activitydesc'] ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary" name="update">Update</button>
-            <button type="button" class="btn btn-dark">Back to Dashboard</button>
+            <button onclick="window.location.href = 'dashboard.php';" type="button" class="btn btn-dark">Back to Dashboard</button>
         </form>
 
         <?php
@@ -118,7 +118,7 @@ $places = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <textarea class="form-control" rows="5" name="activitydesc"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            <button type="button" class="btn btn-dark">Back to Dashboard</button>
+            <button onclick="window.location.href = 'dashboard.php';" type="button" class="btn btn-dark">Back to Dashboard</button>
         </form>
 
         <?php } ?>
