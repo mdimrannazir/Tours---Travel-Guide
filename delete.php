@@ -37,11 +37,37 @@
 }
 
 
+else if( $type === 'stay'){
+    $sql = "DELETE FROM `stay` WHERE stayid = $id";
+    $result = mysqli_query($connect, $sql);
+    if ($result) {
+        // echo 'Deleted successfully';
+        header('location: add-stay.php');
+    }
+    else{
+        die(mysqli_error($connect));
+    }
+}
+
+
+else if( $type === 'food'){
+    $sql = "DELETE FROM `food` WHERE foodid = $id";
+    $result = mysqli_query($connect, $sql);
+    if ($result) {
+        // echo 'Deleted successfully';
+        header('location: add-food.php');
+    }
+    else{
+        die(mysqli_error($connect));
+    }
+}
 
 
 
 
-   else if ( $type === 'user' ){
+
+
+   else if ($type === 'user'){
         $sql = "DELETE FROM `user` WHERE uid = $id";
         $result = mysqli_query($connect, $sql);
         if ($result) {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2023 at 07:44 PM
+-- Generation Time: Mar 21, 2023 at 09:08 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -42,8 +42,7 @@ INSERT INTO `activity` (`activityid`, `placeid`, `activitytitle`, `activitydesc`
 (10, 8, 'Inani Beach', 'nani beach is a well-known place in Cox’s Bazar. The Inani beach is a coral beach with sharp stones.\r\n\r\nPathorkhani is located in Inani Beach, a famous attraction where tourists gather around it and take snapshots by sitting on it.\r\n\r\nAlso the sea view youll get in the Inani is unlike any other spot in Coxs bazar. For a perfect beach view stay at Inani you can choose Dera Resort & Spa Coxs Bazars five star facility.'),
 (11, 8, 'Marine Drive', 'The longest marine drive in the world is Coxs Bazar–Teknaf marine drive which is about 80 kilometers long. You can ride the Chander Gari from Coxs Bazar to Teknaf. You can also go to Saint Martin Island from there.'),
 (13, 9, 'Tiger Point Sundarban', ' Kachikhali is more often called as tiger point. This place is best for wild tracking.'),
-(14, 9, 'Jamtola Beach', 'Jamtola Sea beach sundarban is another magnificent tourist spot where tourist will enjoy the sunset and sur rise.'),
-(15, 10, 'dfg', 'sdfghjk');
+(14, 9, 'Jamtola Beach', 'Jamtola Sea beach sundarban is another magnificent tourist spot where tourist will enjoy the sunset and sur rise.');
 
 -- --------------------------------------------------------
 
@@ -85,7 +84,7 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`placeid`, `placetitle`, `placedesc`) VALUES
-(8, 'Coxs Bazar', 'Coxs Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island'),
+(8, 'Cox Bazar', 'Coxs Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island'),
 (9, 'Sundarban', 'Sundarbans is a mangrove area in the delta formed by the confluence of the Padma, Brahmaputra and Meghna Rivers in the Bay of Bengal. Sundarban Reserve Forest of Bangladesh is the largest mangrove forest in the world.');
 
 -- --------------------------------------------------------
@@ -109,9 +108,7 @@ INSERT INTO `stay` (`stayid`, `placeid`, `staytitle`, `staydesc`) VALUES
 (11, 8, 'Hotel Sea Shine', 'Situated in Coxs Bazar, 400 metres from Coxs Bazar Sea Beach, Hotel Sea Shine features accommodation with free WiFi and free private parking. At the hotel, rooms have a balcony with a city view. '),
 (12, 8, 'Long Beach Hotel ', 'Offering an indoor pool, a fitness centre and a spa and wellness centre, Long Beach Hotel is located 3.3 km from the Coxs Bazar Airport and Local Bus Station. good hotel to stay . nice atmosphere . well behaved staff. food should be more tasty. nice bed.'),
 (13, 9, 'ROYAL SUNDARBAN', 'Location of the Hotel is Satjelia View On Map (Jharkhali coastal, 2nd scheme, PS BasantiSouth 24 Parganas Pin - 743312 ). Top Facilities of this Hotel are Air Conditioning & Room Service & Power Backup.'),
-(14, 9, 'Sundarban Gateway Resort', 'Full Address of property is Vill : Dulki, Pakhiralaya, PS: Gosaba, South 24 Parganas View On Map This Hotel have 2.6 Out of 5 Rating where 3.7/5 for Location & 3.4/5 for Hospitality & 3.3/5 for Room . Key amenities of this property are Lounge & Outdoor Sports & Boat Ride.'),
-(15, 10, 'as', 'gyukn'),
-(16, 12, 'redbith', 'dfghh');
+(14, 9, 'Sundarban Gateway Resort', 'Full Address of property is Vill : Dulki, Pakhiralaya, PS: Gosaba, South 24 Parganas View On Map This Hotel have 2.6 Out of 5 Rating where 3.7/5 for Location & 3.4/5 for Hospitality & 3.3/5 for Room . Key amenities of this property are Lounge & Outdoor Sports & Boat Ride.');
 
 -- --------------------------------------------------------
 
@@ -181,25 +178,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `activityid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `activityid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `foodid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `foodid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `place`
 --
 ALTER TABLE `place`
-  MODIFY `placeid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `placeid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `stay`
 --
 ALTER TABLE `stay`
-  MODIFY `stayid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `stayid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `user`

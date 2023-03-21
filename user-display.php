@@ -75,7 +75,7 @@ include 'db/_dbConnect.php';
                         <td>'.$email.'</td>
                         <td>'.$pass.'</td>
                         <td>'.$dt.'</td>
-                        <td>
+                        <td>     
                             <button class="btn btn-danger">
                                 <a href="delete.php?type=user&id='.$id.'" class="text-light text-decoration-none">Delete</a>
                             </button>

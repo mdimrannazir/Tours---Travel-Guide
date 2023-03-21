@@ -105,11 +105,9 @@ if(isset($_POST['submit'])){
 
         <?php } ?>
 
-
     </div>
-    <br>
     <!-- Add Place Form Ends Here -->
-
+    <br>
     <div class="container">
     <table class="table table-dark table-hover">
         <thead>
